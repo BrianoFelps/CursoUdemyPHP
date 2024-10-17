@@ -9,6 +9,10 @@
     <?php
         echo '<p>Abóbora</p>';
         echo print('<p>Abóbora</p>'); // Resultado será o valor 1, pela dupla verificação do print
+        
+        //
+        #   COMENTÁRIOS PHP
+        /**/
     ?>
 </body>
 </html>
