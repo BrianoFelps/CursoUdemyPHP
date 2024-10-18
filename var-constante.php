@@ -23,6 +23,10 @@
                 echo 'Mentira';
             }
 
+            // Retorno simples
+            if(true)
+                echo 'aaaa'
+
         ?>
 
     </body>
