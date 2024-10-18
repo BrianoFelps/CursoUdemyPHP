@@ -19,12 +19,22 @@
         echo $variavel_PHP, '<br/>';
         $variavel_PHP = true;
         echo $variavel_PHP, '<br/>';
+
+        $nome = 'Brian';
+        $idade = 18;
     ?>
 
     <main>
         <h1>
             <?= $variavel_PHP ?>
         </h1>
+        <p>
+            <!-- Concatenação com o operador ponto(.). Preste atenção aos espaços da string -->
+            <?= 'Olá ' . $nome . ', tudo bem? Você tem' . $idade . ' anos!' ?>
+
+            <!-- Concatenação com aspas duplas, muito melhor, e não funciona assim com as aspas simples -->
+             <?= "<br/><br/> Olá $nome, tudo bem? Você tem $idade anos!" ?>
+        </p>
     </main>
 </body>
 </html>
