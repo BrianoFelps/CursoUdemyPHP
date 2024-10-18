@@ -15,7 +15,14 @@
 
             echo CONSTANTE . "<br/>";
             echo CONSTANTE2 . "<br/>";
-            echo CONSTANTE3 . "<br/>";
+            echo CONSTANTE3 . "<br/><br/>";
+
+            if(2 === 2.0){
+                echo 'Verdade';
+            } else {
+                echo 'Mentira';
+            }
+
         ?>
 
     </body>
