@@ -10,7 +10,7 @@
             $idade = 82;
             $peso = 102;
 
-            ?>
-            <?= ($idade >= 16 && $idade <= 69 && $peso >= 50) ? 'Atende aos requisitos' : "Não atende aos requisitos" ?>
+        ?>
+        <?= ($idade >= 16 && $idade <= 69 && $peso >= 50) ? 'Atende aos requisitos' : "Não atende aos requisitos" ?>
     </body>
 </html>
