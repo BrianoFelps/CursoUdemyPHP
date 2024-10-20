@@ -25,7 +25,7 @@
 
             echo "$valor " . gettype($valor). ' <br/>' ;
 
-            $valor = (boolean) $valor;
+            $valor = (bool) $valor;
 
             echo "$valor " . gettype($valor). ' <br/>' ;
 
