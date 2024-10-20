@@ -21,7 +21,11 @@
                 echo 'uma das duas não é falsa <br/>';
 
             if(!false)
-                echo 'Inverteu-se a falsa';
+                echo 'Inverteu-se a falsa <br/>';
+
+            // ternário condicao ? true : false
+            $ternaria = true ? 'true' : 'false';
+            echo $ternaria
         ?>
     </body>
 </html>
