@@ -17,7 +17,12 @@
             // Arredonda com base nas casas decimais
             echo round($num) . '</br>';
             
-            echo (rand() * $num) . '</br>';
+            /* O random pega um valor aleatório dentre o valor mínimo
+            até o valor máximo possível do sistema;
+            existe outra função para identificar esse valor máximo:*/
+            echo getrandmax() . '</br>';
+            // Pode-se definir o limite na função nativa também
+            echo (rand(0, 10) * $num) . '</br>';
 
             // Raíz quadrada
             echo sqrt($num) . '</br>';
