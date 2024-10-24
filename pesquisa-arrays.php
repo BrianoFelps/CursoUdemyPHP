@@ -12,11 +12,11 @@
             in_array() retorna true ou false 
             array_search() retorna o índice, caso exista
             */
-            $listaFrt = ['Tangerina', 'Maçã', 'Uva', 'Banana'];    
+            $listaFrt = ['Tangerina', 'Maçã', 'Uva', 'Banana'];   
             
             $existe = in_array(ucfirst('uva') , $listaFrt);
 
-            echo ($existe ? 'Existe!' : 'Não existe'); 
+            echo ($existe ? 'Existe!' : 'Não existe');
 
             echo '<hr>';
 
