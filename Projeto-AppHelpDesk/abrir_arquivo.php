@@ -3,7 +3,7 @@
     print_r($_POST);
     echo '</pre> <br>';
 
-    $textoSemHash = str_replace('#' , 'º', implode('*', $_POST)); 
+    $textoSemHash = str_replace('#' , '|', implode('*', $_POST)); 
     $texto = implode('#' ,explode('*' , $textoSemHash)) . PHP_EOL;
 
     echo $textoConvertido . '<br>';
