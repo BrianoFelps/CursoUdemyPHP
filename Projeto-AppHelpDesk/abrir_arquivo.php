@@ -8,7 +8,7 @@
     // echo $texto . '<br>';
     // echo $texto;
 
-    $arquivo = fopen('arquivo.hd', 'a');
+    $arquivo = fopen('../../AppHelpDeskRestrict/arquivo.hd', 'a');
 
     fwrite($arquivo, $texto);
 

@@ -1,7 +1,7 @@
 <?php
   require_once "validar-acesso.php";
 
-  $arquivo = fopen('arquivo.hd', 'r');
+  $arquivo = fopen('../../AppHelpDeskRestrict/arquivo.hd', 'r');
 
   // verifica se é o fim do arquivo (feof => file: end of file)
   while (!feof($arquivo)) {
