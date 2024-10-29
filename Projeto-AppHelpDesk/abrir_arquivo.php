@@ -8,6 +8,7 @@
     // echo $texto . '<br>';
     // echo $texto;
 
+    /*ANTES ESTAVA EM REPOSITÓRIO PÚBLICO (HTDOCS), NO MOMENTO QUE TIRO DELE, A SEGURANÇA AUMENTA UM NÍVEL, POIS O ACESSO DIRETO PODE SER FÁCILMENTE REALIZADO*/
     $arquivo = fopen('../../AppHelpDeskRestrict/arquivo.hd', 'a');
 
     fwrite($arquivo, $texto);
