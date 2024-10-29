@@ -1,5 +1,16 @@
 <?php
   require_once "validar-acesso.php";
+
+  $arquivo = fopen('arquivo.hd', 'r');
+
+  // verifica se é o fim do arquivo (feof => file: end of file)
+  while (!feof($arquivo)) {
+    $registroChamado = fgets($arquivo);
+
+    $chamados[] = $registroChamado;
+  }
+
+  fclose($arquivo);
 ?>
 
 <html>
@@ -35,24 +46,30 @@
             
             <div class="card-body">
               
+            <?php 
+              foreach($chamados as $chamado){
+
+                
+                $arrayChamado = explode('#' , $chamado);
+
+                if(count($arrayChamado) < 3){
+                  continue;
+                }
+                
+                $converterHashT = str_replace('|', '#', $arrayChamado[0]);
+                $converterHashC = str_replace('|', '#', $arrayChamado[1]);
+                $converterHashD = str_replace('|', '#', $arrayChamado[2]);
+            ?>
+
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
+                  <h5 class="card-title"><?= $converterHashT ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?= $converterHashC ?></h6>
+                  <p class="card-text"><?= $converterHashD ?></p>
                 </div>
               </div>
 
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
-                </div>
-              </div>
-
+            <?php }?>
               <div class="row mt-5">
                 <div class="col-6">
                   <a href="home.php" class="btn btn-lg btn-warning btn-block">Voltar</a>
