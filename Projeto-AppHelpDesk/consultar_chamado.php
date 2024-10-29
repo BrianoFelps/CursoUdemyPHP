@@ -5,9 +5,22 @@
 
   // verifica se é o fim do arquivo (feof => file: end of file)
   while (!feof($arquivo)) {
-    $registroChamado = fgets($arquivo);
+    //Pega os registros do arquivo anteriormente aberto linha a linha, transforma os registros em arrays utilizáveis para verificações diretas separando pela #, 
+    $registroChamados = explode('#' ,fgets($arquivo));
 
-    $chamados[] = $registroChamado;
+    //Verifica se é um usuário ou um administrador, e mantém somente as informações que correspondem ao usuário, caso seja um.
+    if($_SESSION['role_id'] == 2){
+      if($_SESSION['id'] != $registroChamados[0]){
+        continue;
+      }
+    }
+    //Elimina registros vazios (a linha deixada pelo PHP_EOL)
+    if(count($registroChamados) < 3){
+      continue;
+    }
+
+    //Registra os chamados que passaram pelas condições certas numa array
+    $chamados[] = $registroChamados;
   }
 
   fclose($arquivo);
@@ -47,18 +60,12 @@
             <div class="card-body">
               
             <?php 
-              foreach($chamados as $chamado){
+            //Pela array, se passa nos registros para converter os textos com hashtag digitada pelo usuário, e depois fazer o HTML dos elementos de forma correspondente.
+              foreach($chamados as $i => $chamado){
 
-                
-                $arrayChamado = explode('#' , $chamado);
-
-                if(count($arrayChamado) < 3){
-                  continue;
-                }
-                
-                $converterHashT = str_replace('|', '#', $arrayChamado[0]);
-                $converterHashC = str_replace('|', '#', $arrayChamado[1]);
-                $converterHashD = str_replace('|', '#', $arrayChamado[2]);
+                $converterHashT = str_replace('|', '#', $chamado[1]);
+                $converterHashC = str_replace('|', '#', $chamado[2]);
+                $converterHashD = str_replace('|', '#', $chamado[3]);
             ?>
 
               <div class="card mb-3 bg-light">

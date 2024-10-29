@@ -1,13 +1,12 @@
 <?php
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre> <br>';
+
+    session_start();
 
     $textoSemHash = str_replace('#' , '|', implode('*', $_POST)); 
-    $texto = implode('#' ,explode('*' , $textoSemHash)) . PHP_EOL;
+    $texto =  $_SESSION['id'] . '#' . implode('#' ,explode('*' , $textoSemHash)) . PHP_EOL;
 
-    echo $textoConvertido . '<br>';
-    echo $texto;
+    // echo $texto . '<br>';
+    // echo $texto;
 
     $arquivo = fopen('arquivo.hd', 'a');
 
@@ -15,6 +14,6 @@
 
     fclose($arquivo);
 
-    header("Location: abrir_chamado.php")
+    header("Location: abrir_chamado.php");
 ?>
 
