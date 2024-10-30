@@ -6,13 +6,26 @@
         public $nome = 'Maria';
         public $telefone = null;
         public $numFilhos = 1;
+        public $cargo = null;
+        public $salario = null;
 
-        function setTelefone($tel){
-            return $this->telefone = $tel;
+        //getters & setters (overloading)
+        function __set($atr, $val){
+            $this->$atr = $val;
         }
-        function getTelefone(){
-            return $this->telefone;
+
+        function __get($atr){
+            return $this->$atr;
         }
+
+        //getters & setters
+        // function setTelefone($tel){
+        //     return $this->telefone = $tel;
+        // }
+
+        // function getTelefone(){
+        //     return $this->telefone;
+        // }
 
         //métodos
         public function resumirCadFunc(){
@@ -30,6 +43,6 @@
     $maria = new Funcionario();
     $maria->modificarNumFilhos(4);
     echo $maria->resumirCadFunc() . '<br>';
-    $maria->setTelefone('44 98045-4565');
-    echo $maria->getTelefone();
+    $maria->__set('telefone','44 98045-4565');
+    echo $maria->__get('telefone');
 ?>
