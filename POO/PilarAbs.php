@@ -1,10 +1,18 @@
 <?php
+    //entidade
     class Funcionario {
         
         //atributos
         public $nome = 'Maria';
-        public $telefone = '99 99999-9999';
+        public $telefone = null;
         public $numFilhos = 1;
+
+        function setTelefone($tel){
+            return $this->telefone = $tel;
+        }
+        function getTelefone(){
+            return $this->telefone;
+        }
 
         //métodos
         public function resumirCadFunc(){
@@ -18,7 +26,10 @@
         }
     }
 
+    //identidade
     $maria = new Funcionario();
-    echo $maria->modificarNumFilhos(4);
-    echo $maria-> resumirCadFunc();
+    $maria->modificarNumFilhos(4);
+    echo $maria->resumirCadFunc() . '<br>';
+    $maria->setTelefone('44 98045-4565');
+    echo $maria->getTelefone();
 ?>
