@@ -17,7 +17,7 @@
             echo strlen($textoLegal) . "</br>";
             echo str_replace("máquina", "inteligência artificial", $textoLegal) . "</br>";
             echo str_replace("´", "", $textoLegal) . "</br>";
-            /* O último parametro é a quantidade de caracteres que se vai extrair.
+            /* O último parametro é a000000000 quantidade de caracteres que se vai extrair.
             note que os acentos contam como 1 caractere, por isso nesse caso são
             requisitados 11, e não 10.*/
             echo substr($textoLegal, 0, 11) . "</br>";

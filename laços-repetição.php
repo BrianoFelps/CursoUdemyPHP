@@ -74,6 +74,30 @@
 
                 echo '<br>';
             }
+            echo '<br>';
+            echo '<br>';
+
+            function DNA_strand($dna) {
+    
+                $dna = str_split($dna);
+                
+                for($i = 0; $i < count($dna); $i++){
+                    if($dna[$i] === 'A'){
+                        $dna[$i] = 'T';
+                    } else if ($dna[$i] === 'T'){
+                        $dna[$i] = 'A';
+                    } else if($dna[$i] === 'C'){
+                        $dna[$i] = 'G';
+                    } else if ($dna[$i] === 'G'){
+                        $dna[$i] ='C';
+                    }
+                }
+                
+                $dna = implode('', $dna);
+                return $dna;
+            }
+
+            echo DNA_strand("TTTT");
         ?>
     </body>
 </html>
