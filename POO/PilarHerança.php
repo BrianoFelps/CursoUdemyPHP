@@ -1,5 +1,9 @@
 <?php
 
+    interface VeiculoInterface{
+        public function acelerar();
+    }
+
     class Veiculo{
         public $placa = null;
         public $cor = null;
@@ -10,6 +14,14 @@
 
         function buzinar(){
             echo 'bi biiiiiiiii';
+        }
+
+        private function acelerar(){
+            echo 'vrummm';
+        }
+
+        public function acao(){
+            return $this->acelerar();
         }
     }
 
@@ -58,4 +70,6 @@
     $moto->buzinar();
     echo "<br>";
     $moto->frear();
+    echo "<br>";
+    $carro->acao();
 ?>
