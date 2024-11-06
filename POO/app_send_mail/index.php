@@ -25,6 +25,17 @@
 							<div class="form-group">
 								<label for="para">Para</label>
 								<input name="destinatario" type="text" class="form-control" id="para" placeholder="joao@dominio.com.br">
+
+								<?php
+									if(isset($_GET['envio']) && $_GET['envio'] == 'erro1'){
+								?>
+
+								<div style="color: red;">E-mail inválido! tente novamente.</div>
+
+								<?php
+									}
+								?>
+
 							</div>
 
 							<div class="form-group">
@@ -36,6 +47,31 @@
 								<label for="mensagem">Mensagem</label>
 								<textarea name="mensagem" class="form-control" id="mensagem"></textarea>
 							</div>
+
+							
+							<?php
+								if(isset($_GET['envio']) && $_GET['envio'] == 'erro2'){
+							?>
+							<div style="color: red;">Campos incompletos!! digite tudo antes de proceder.</div>
+							<?php
+								}
+							?>
+							
+							<?php
+								if(isset($_GET['envio']) && $_GET['envio'] == 'erro3'){
+							?>
+							<div style="color: red;">Erro no envio do e-mail. Tente novamente mais tarde.</div>
+							<?php
+								}
+							?>
+
+							<?php
+								if(isset($_GET['envio']) && $_GET['envio'] == 'sucesso'){
+							?>
+							<div style="color: green;">E-mail enviado com sucesso!</div>
+							<?php
+								}
+							?>
 
 							<button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem</button>
 						</form>
