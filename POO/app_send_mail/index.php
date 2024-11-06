@@ -23,6 +23,15 @@
 					<div class="card-body font-weight-bold">
 						<form action="validar_envio.php" method="post">
 							<div class="form-group">
+
+								<?php
+									if(isset($_GET['envio']) && $_GET['envio'] == 'sucesso'){
+								?>
+									<h3 style="color: green;">E-mail enviado com sucesso!</h3>
+								<?php
+									}
+								?>
+
 								<label for="para">Para</label>
 								<input name="destinatario" type="text" class="form-control" id="para" placeholder="joao@dominio.com.br">
 
@@ -30,7 +39,7 @@
 									if(isset($_GET['envio']) && $_GET['envio'] == 'erro1'){
 								?>
 
-								<div style="color: red;">E-mail inválido! tente novamente.</div>
+									<div style="color: red;" class="mb-3">E-mail inválido! tente novamente.</div>
 
 								<?php
 									}
@@ -52,7 +61,7 @@
 							<?php
 								if(isset($_GET['envio']) && $_GET['envio'] == 'erro2'){
 							?>
-							<div style="color: red;">Campos incompletos!! digite tudo antes de proceder.</div>
+								<div style="color: red;" class="mb-3">Campos incompletos!! digite tudo antes de proceder.</div>
 							<?php
 								}
 							?>
@@ -60,15 +69,10 @@
 							<?php
 								if(isset($_GET['envio']) && $_GET['envio'] == 'erro3'){
 							?>
-							<div style="color: red;">Erro no envio do e-mail. Tente novamente mais tarde.</div>
-							<?php
-								}
-							?>
-
-							<?php
-								if(isset($_GET['envio']) && $_GET['envio'] == 'sucesso'){
-							?>
-							<div style="color: green;">E-mail enviado com sucesso!</div>
+								<div style="color: red;">Erro no envio do e-mail, tente novamente mais tarde. Detalhes:</div>
+								<div style="color: red;" class="mb-3">
+								<?= $_GET['erro']?>
+							</div>
 							<?php
 								}
 							?>

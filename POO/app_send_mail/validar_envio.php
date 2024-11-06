@@ -92,8 +92,8 @@
         $mail->send();
         header("Location: index.php?envio=sucesso");
     } catch (Exception $e) {
-        echo "A mensagem não pode ser enviada. Erro: {$mail->ErrorInfo}";
-        header("Location: index.php?envio=erro3");
+        // echo "A mensagem não pode ser enviada. Erro: {$mail->ErrorInfo}";
+        header("Location: index.php?envio=erro3&erro=" . $mail->ErrorInfo);
     }
 
 ?>
