@@ -18,35 +18,53 @@ passo 8, usar composer install com o arquivo composer.json no terminal de comand
 use App\Classes\PedidoBolo;
 use App\Classes\FormaDeBolo;
 use App\Classes\Cliente;
+use App\Classes\TesteParaRevisao;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-$maria = new Cliente("Maria", 21);
-$joao = new Cliente("João", 26);
-$jose = new Cliente("José", 45);
+//**************************************************TESTES******************************************************** */
+    $testeRemocao = new TesteParaRevisao(12, "Brian Felipe Gonçalves", true);
 
-$bolo2 = new PedidoBolo($maria);
+    // $testeRemocao->ArrayPush(["Carlos", 'Silva', 'Bueno']);
 
-echo "<h3>Bolo 2:</h3>";
+    // echo "<h2> Antes </h2>";
+    // echo "<pre>";
+    // print_r($testeRemocao);
+    // echo "<pre/>";
+    // $testeRemocao->retirarNomeDaLista("Brian");
+
+    // echo "<h2> Depois </h2>";
+    echo "<pre>";
+    print_r($testeRemocao);
+    echo "<pre/>";
+//********************************************************************************************************** */
+
+// $maria = new Cliente("Maria", 21);
+// $joao = new Cliente("João", 26);
+// $jose = new Cliente("José", 45);
+
+// $bolo2 = new PedidoBolo($maria);
+
+// echo "<h3>Bolo 2:</h3>";
 
 
 // echo $bolo2->formaBolo->adicionaIngredientes(["Adamantio", "Couro", "Ouro"]);
 // echo $bolo2->formaBolo->removeIngredientes("Adamantio");
 // echo $bolo2->formaBolo->fazerBolo();
-echo $bolo2->formaBolo->colocarNoForno();
+// echo $bolo2->formaBolo->colocarNoForno();
 
-echo $bolo2->resumoPedido();
+// echo $bolo2->resumoPedido();
 
 // echo '<pre>'; print_r($bolo2);
 
-$bolo3 = new PedidoBolo($joao);
+// $bolo3 = new PedidoBolo($joao);
 
-echo "<h3>Bolo 3:</h3>";
+// echo "<h3>Bolo 3:</h3>";
 
 // echo $bolo2->formaBolo->transfereIngrediente("Ouro", $bolo3->formaBolo);
 
-echo $bolo3->formaBolo->colocarNoForno();
-echo $bolo3->resumoPedido();
+// echo $bolo3->formaBolo->colocarNoForno();
+// echo $bolo3->resumoPedido();
 
 // echo '<pre>'; print_r($bolo3);
 
@@ -54,14 +72,14 @@ echo $bolo3->resumoPedido();
 
 // echo '<pre>'; print_r($bolo2);
 
-$bolo4 = new PedidoBolo($jose);
+// $bolo4 = new PedidoBolo($jose);
 
-echo "<h3>Bolo 4:</h3>";
+// echo "<h3>Bolo 4:</h3>";
 
-echo $bolo4->formaBolo->colocarNoForno();
-echo $bolo4->resumoPedido();
+// echo $bolo4->formaBolo->colocarNoForno();
+// echo $bolo4->resumoPedido();
 
-echo '<pre>'; print_r($bolo4);
+// echo '<pre>'; print_r($bolo4);
 
 
 

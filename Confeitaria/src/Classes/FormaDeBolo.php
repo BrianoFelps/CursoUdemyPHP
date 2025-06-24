@@ -29,7 +29,15 @@ class FormaDeBolo {
     public function fazerBolo(){
         if(!$this->validarIngredientes()) return;
 
+        $pedidos = new DBConnection();
+
         $this->misturarIngredientes();
+
+        $pedidos->gravarPedido(
+            'Cliente',
+            'Funcionario',
+            json_encode($this->ingredientes)
+        );
     }
 
     public function misturarIngredientes(){

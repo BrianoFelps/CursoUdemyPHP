@@ -4,19 +4,20 @@ declare(strict_types = 1);
 namespace App\Classes;
 
 class TesteParaRevisao{
-    private array $array = ['Daniel', 'Carlos', 'Brian', 'Ana'];
-    // private array $array2 = ['Leila'];
+    // private array $array = ['Daniel', 'Carlos', 'Brian', 'Ana'];
+    // // private array $array2 = ['Leila'];
     
-    public function retirarNomeDaLista(string $nomeDigitado): void{
-        $indiceDoDigitado = array_search($nomeDigitado ,$this->array);
-
-        unset($this->array[$indiceDoDigitado]);
+    public function __construct(
+        private int $anosDeIdade,
+        private string $nomeCompleto,
+        public bool $estaTrabalhando
+    ){
     }
 
+    // public function retirarNomeDaLista(string $nomeDigitado): void{
 
-    // public function __construct(){
-    //    
     // }
+
 
     // private static int $numeroFuncionariosOcupados = 0;
 
@@ -34,19 +35,5 @@ class TesteParaRevisao{
 
 }
 
-    $testeRemocao = new TesteParaRevisao();
-
-    // $testeRemocao->ArrayPush(["Carlos", 'Silva', 'Bueno']);
-
-    // echo "<h2> Antes </h2>";
-    // echo "<pre>";
-    // print_r($testeRemocao);
-    // echo "<pre/>";
-    // $testeRemocao->retirarNomeDaLista("Brian");
-
-    // echo "<h2> Depois </h2>";
-    // echo "<pre>";
-    // print_r($testeRemocao);
-    // echo "<pre/>";
 
 ?>

@@ -16,6 +16,10 @@ class Cliente {
         return "{$this->nome}, que tem {$this->idade} anos";
     }
 
+    public function getNomeCliente(): string{
+        return $this->nome;
+    }
+
 }
 
 

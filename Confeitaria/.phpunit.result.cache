@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Test\\Classes\\ClienteTest::testExibeCliente":8,"Test\\Classes\\ClienteTest::testMetodoClienteExiste":7},"times":{"Test\\Classes\\ClienteTest::testExibeCliente":0.012,"Test\\Classes\\ClienteTest::testGetDadosCliente":0.004,"Test\\Classes\\ClienteTest::testMetodoClienteExiste":0.013}}
